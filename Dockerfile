@@ -9,4 +9,4 @@ EXPOSE 8000
 # CMD ["cd vue-sample && npm run serve"]
 CMD ["sh"]
 
-# docker run --rm -p 8000:8000 -v /Users/e-sugiura/ghq/github.com/michan74/vue_tutorial/Dockerfile -it vue
+# docker run --rm -p 8000:8000 -v /Users/e-sugiura/ghq/github.com/michan74/vue_tutorial/Dockerfile -it 4e18136e3275 sh
