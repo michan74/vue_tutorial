@@ -4,7 +4,7 @@ WORKDIR /usr/src/app
 
 COPY ./package.json /usr/src/app/package.json
 
-RUN npm install -g @vue/cli @vue/cli-init
+RUN npm install -g @vue/cli @vue/cli-inits
 
 EXPOSE 8000
 
