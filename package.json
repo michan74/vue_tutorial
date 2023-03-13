@@ -1,0 +1,19 @@
+{
+  "name": "vue_tutorial",
+  "version": "1.0.0",
+  "description": "vue_tutorial",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/michan74/vue_tutorial.git"
+  },
+  "author": "e-sugiura",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/michan74/vue_tutorial/issues"
+  },
+  "homepage": "https://github.com/michan74/vue_tutorial#readme"
+}
