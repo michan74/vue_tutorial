@@ -7,7 +7,7 @@ docker build -t vue_tutorial .
 
 - vueプロジェクト作成
 ```sh
-docker run --rm vue_tutorial create vue_tutorial
+docker run --rm -it vue_tutorial vue create vue_tutorial
 ```
 
 - 起動
