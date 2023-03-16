@@ -1,18 +1,18 @@
 <template>
   <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <EmployeeForm @add:employee="addEmployee"/>
   <EmployeeTable :employees="employees"></EmployeeTable>
 </template>
 
 <script>
 import EmployeeTable from '@/components/EmployeeTable.vue'
-import HelloWorld from './components/HelloWorld.vue'
+import EmployeeForm from '@/components/EmployeeForm.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld,
-    EmployeeTable
+    EmployeeTable,
+    EmployeeForm
   },
   data() {
     return {
@@ -35,6 +35,11 @@ export default {
       ],
     }
   },
+  methods: {
+    addEmployee(employee)  {
+      this.employees = [...this.employees, employee]
+    }
+  }
 }
 </script>
 
