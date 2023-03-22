@@ -1,6 +1,7 @@
 <template>
   <div id="employee-table">
-    <table>
+    <p v-if="employees.length < 1" class="empty-table">No employees</p>
+    <table v-else>
       <thead>
         <tr>
           <th>Employee name</th>
@@ -13,8 +14,8 @@
           <td>{{ employee.name }}</td>
           <td>{{ employee.email }}</td>
           <td>
-            <button>Edit</button>
-            <button>Delete</button>
+            <button @click="$emit('edit:employ', employee.id)">Edit</button>
+            <button @click="$emit('delete:employ', employee.id)">Delete</button>
           </td>
         </tr>
       </tbody>
