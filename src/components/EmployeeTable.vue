@@ -11,10 +11,12 @@
       </thead>
       <tbody>
         <tr v-for="employee in employees" :key="employee.id">
-          <td>{{ employee.name }}</td>
-          <td>{{ employee.email }}</td>
+          <td v-if="editing === employee.id">編集中</td>
+          <td v-else>{{ employee.name }}</td>
+          <td v-if="editing === employee.id">編集中</td>
+          <td v-else>{{ employee.email }}</td>
           <td>
-            <button @click="$emit('edit:employ', employee.id)">Edit</button>
+            <button @click="editMode(employee.id)">Edit</button>
             <button @click="$emit('delete:employ', employee.id)">Delete</button>
           </td>
         </tr>
@@ -29,6 +31,21 @@
     props: {
       employees: Array,
     },
+    data() {
+      return {
+        editing: null,
+      }
+    },
+    method: {
+      editMode(employeeId) {
+        this.editing = employeeId
+      },
+      editEmployee(employee){
+        if(employee.name === '' || employee.email === '') return
+        this.$emit('edit:employee',employee.id, employee)
+        this.editing = null
+      }
+    }
   }
 </script>
 

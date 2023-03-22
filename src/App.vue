@@ -1,7 +1,7 @@
 <template>
   <img alt="Vue logo" src="./assets/logo.png">
   <EmployeeForm @add:employee="addEmployee"/>
-  <EmployeeTable :employees="employees" @delete:employ="deleteEmployee"></EmployeeTable>
+  <EmployeeTable :employees="employees" @delete:employ="deleteEmployee" @edit:employ="editEmployee"></EmployeeTable>
 </template>
 
 <script>
@@ -42,6 +42,11 @@ export default {
     deleteEmployee(employeeId) {
       this.employees = this.employees.filter(
         employee => employee.id !== employeeId
+      )
+    },
+    editEmployee(employeeId, updatedEmployee) {
+      this.employees = this.employees.map(employee =>
+        employee.id === employeeId ? updatedEmployee : employee
       )
     }
   }
